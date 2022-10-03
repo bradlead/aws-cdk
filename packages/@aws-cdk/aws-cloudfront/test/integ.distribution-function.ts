@@ -18,9 +18,11 @@ new cloudfront.Distribution(stack, 'Dist', {
       eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
     }],
   },
+
 });
 
 new cdk.CfnOutput(stack, 'FunctionArn', { value: cfFunction.functionArn });
 new cdk.CfnOutput(stack, 'FunctionStage', { value: cfFunction.functionStage });
+
 
 app.synth();
